@@ -63,6 +63,7 @@ class _ButtonsView extends StatelessWidget {
                 label: const Text('TextIconButton')),
 
             //TODO:
+            const CustomButton(),
 
             IconButton(
                 onPressed: () {},
@@ -75,6 +76,31 @@ class _ButtonsView extends StatelessWidget {
                   iconColor: const MaterialStatePropertyAll(Colors.white)),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Text(
+                'CustomButton UwU',
+                style: TextStyle(color: Colors.white),
+              )),
         ),
       ),
     );
