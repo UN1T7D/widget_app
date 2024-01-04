@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widget_app/config/menu/menu_items.dart';
-import 'package:widget_app/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String name = 'home_screen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -55,7 +55,9 @@ class _CustomListTitle extends StatelessWidget {
       title: Text(menuItems.title),
       subtitle: Text(menuItems.subTitle),
       onTap: () {
-        context.push(menuItems.link);
+        // context.push(menuItems.link);
+        // context.pushNamed(CardsScreen.name);
+
       },
     );
   }
