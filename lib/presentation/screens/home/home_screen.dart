@@ -55,9 +55,8 @@ class _CustomListTitle extends StatelessWidget {
       title: Text(menuItems.title),
       subtitle: Text(menuItems.subTitle),
       onTap: () {
-        // context.push(menuItems.link);
+        context.push(menuItems.link);
         // context.pushNamed(CardsScreen.name);
-
       },
     );
   }
