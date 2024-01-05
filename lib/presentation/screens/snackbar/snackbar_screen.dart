@@ -23,8 +23,10 @@ class SnackbarScreen extends StatelessWidget {
         title: const Text('You sure?'),
         content: const Text('Yes i do!'),
         actions: [
-          TextButton(onPressed: () => context.pop(), child: Text('Cancel')),
-          FilledButton(onPressed: () => context.pop(), child: Text('Accept'))
+          TextButton(
+              onPressed: () => context.pop(), child: const Text('Cancel')),
+          FilledButton(
+              onPressed: () => context.pop(), child: const Text('Accept'))
         ],
       ),
     );
