@@ -1,3 +1,5 @@
+import 'dart:math' show Random;
+
 import 'package:flutter/material.dart';
 
 class AnimatedScreen extends StatefulWidget {
@@ -14,8 +16,16 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   Color color = Colors.blue;
   double borderRadius = 10;
 
-  void changeShape(){
+  void changeShape() {
+    final random = Random();
 
+    width = random.nextInt(300) + 120;
+    height = random.nextInt(300) + 120;
+    borderRadius = random.nextInt(100) + 20;
+    color = Color.fromRGBO(
+        random.nextInt(255), random.nextInt(255), random.nextInt(255), 1);
+
+    setState(() {});
   }
 
   @override
@@ -27,16 +37,18 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
       body: Center(
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 400),
-          curve: Curves.easeOutCubic,
-          width: width,
-          height: height,
+          curve: Curves.bounceOut,
+          width: width <= 0 ? 0 : width,
+          height: height <= 0 ? 0 : height,
           decoration: BoxDecoration(
-              color: color, borderRadius: BorderRadius.circular(borderRadius)),
+              color: color,
+              borderRadius:
+                  BorderRadius.circular(borderRadius < 0 ? 0 : borderRadius)),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.play_arrow_outlined),
+        onPressed: changeShape,
+        child: const Icon(Icons.play_arrow_outlined),
       ),
     );
   }
