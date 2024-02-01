@@ -60,5 +60,10 @@ const appMenuItem = <MenuItems>[
       subTitle: 'InfiniteScroll & pull',
       link: '/infinite',
       icon: Icons.list_alt_outlined),
+  MenuItems(
+      title: 'Theme Change Screen',
+      subTitle: 'Theme Change Screen',
+      link: '/theme_screen',
+      icon: Icons.color_lens_outlined),
 
 ];
